@@ -1,42 +1,32 @@
+*Người dùng hệ thống: Nhân viên
+
 *Chức năng cơ bản:
 --------------------
 - Quản lý danh sách hàng hóa
-	+ Thêm/sửa/xóa/tìm kiếm hàng hóa (đã làm)
-- Quản lý danh sách hóa đơn (đã làm)
-	+ Thêm mới hóa đơn, thêm danh sách hàng và số lượng vào hóa đơn, tự cộng tổng giá trị đơn hàng, (đã làm)
-  kiểm tra hàng trong kho còn đủ số lượng đáp ứng hay không,  (chỉ kiểm tra ở font-end)
-  cập nhật số lượng còn lại trong kho sau khi tạo hóa đơn. (đã làm)
-	+ Xóa/tìm kiếm hóa đơn (đã làm)
+	+ Thêm/sửa/xóa/tìm kiếm hàng hóa
+- Quản lý danh sách hóa đơn
+	+ Thêm mới hóa đơn, thêm danh sách hàng và số lượng vào hóa đơn, tự cộng tổng giá trị đơn hàng, kiểm tra hàng trong kho còn đủ số lượng đáp ứng hay không, cập nhật số lượng còn lại trong kho sau khi tạo hóa đơn.
+	+ Xóa/tìm kiếm hóa đơn
 
 *Chức năng nâng cao:
 --------------------
-  + Đăng nhập, đăng xuất (đã làm)
-  + Quản lý, tạo mới, thông tin người dùng 
-      (Đang gặp 2 issue: 1> get roles của user đang bị stackoverflow -> @JsonIgnore vào Set<Role> thì không bị lỗi nhưng không
-                            lấy được data từ Set<Role> 
-                         2> Khi gửi data json User lên server, thì không binding được trường Set<Role> -> hashcode khi add User thì
-                            mặc định User đó là ROLE_MEMBER) 
-   + khóa người dùng (kết hợp với chỉnh sửa user)
-   + đổi mật khẩu (đã làm)
-   + Kết xuất chi tiết hóa đơn ở định dạng PDF (đã làm)
+	+ Đăng nhập, đăng xuất
+	+ Quản lý, tạo mới, thông tin người dùng, khóa người dùng, đổi mật khẩu
+	+ Kết xuất chi tiết hóa đơn ở định dạng PDF
+	+ Kết xuất thống kê theo số lượng hàng hóa bán được trong tháng (mã hàng - tên hàng - số lượng - số hóa đơn có mặt hàng này)
 
 ------------------------------------------------------
 II. Yêu cầu kỹ thuật:
 ------------------------------------------------------
-- Sử dụng spring framework: 
-  + spring mvc 
-  + spring data jpa (1 số chức năng có sử dụng @Query)
-  + spring security (Chưa sử dụng OAuth2 jwt vì đang vướng 1 số lỗi -> chỉ phân quyền, chưa xác thực)
-  + spring boot 
-  => Chưa hiểu rõ chức năng nào sử dụng api, chức năng nào sử dụng view resolver.
-    
-- Các tìm kiếm, phân trang dữ liệu tại server side (Chưa phân trang)
-- Có validate dữ liệu đầu vào, alert, notification đầy đủ (Có validate 1 số trường)
-- Có khả năng sắp xếp danh sách hóa đơn theo ngày tạo, 
-    tổng giá, số lượng mặt hàng trong hóa đơn (Vì chưa phân trang được nên em chưa kết hợp được sort )
-- Sử dụng thư viện Jasper Report cho kết xuất file pdf khi tìm kiếm hóa đơn (đã sử dụng)
+- Sử dụng spring framework: spring mvc, spring data jpa, spring security, spring boot
+- Frontend: tùy chọn
+- MySQL Database
+- Các tìm kiếm, phân trang dữ liệu tại server side
+- Có validate dữ liệu đầu vào, alert, notification đầy đủ
+- Có khả năng sắp xếp danh sách hóa đơn theo ngày tạo, tổng giá, số lượng mặt hàng trong hóa đơn
+- Sử dụng thư viện Jasper Report cho kết xuất file pdf khi tìm kiếm hóa đơn
 
-----------------------------------------------------------
+------------------------------------------------------
 * Run project:
 - 2 account mặc định được add sẵn: 
     + Admin acc: admin@gmail.com | pass: 123456
